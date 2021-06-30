@@ -8,9 +8,12 @@ class SetterInjectedControllerTest {
 
     SetterInjectedController controller;
 
+    // setUp() we are doing the Dependency Injection / acting as the inversion of control:-
     @BeforeEach
     void setUp() {
         controller = new SetterInjectedController();
+        // using the setter to inject the GreetingService, code was changed it looked like this initially:-
+        // controller.setGreetingService(new GreetingServiceImpl());
         controller.setGreetingService(new ConstructorGreetingService());
     }
 
